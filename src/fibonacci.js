@@ -1,16 +1,19 @@
 var Fibonacci = function () {
     "use strict";
     this.list = [0];
+    this.defaultListSize = 5;
 };
 
-Fibonacci.prototype.include_number_in_array = function (number) {
+Fibonacci.prototype.includeNumberInArray = function (number) {
     "use strict";
-    this.list.push(number);
+    if(this.list.length < this.defaultListSize) {
+        this.list.push(number);
+    }
 };
 
-Fibonacci.prototype.last_two_numbers = function () {
+Fibonacci.prototype.lastTwoNumbers = function () {
     "use strict";
-    var last_number = this.list[this.list.length-1];
-    var second_to_last_number = this.list[this.list.length-2];
-    return [second_to_last_number, last_number];
+    var lastNumber = this.list[this.list.length-1];
+    var secondToLastNumber = this.list[this.list.length-2];
+    return [secondToLastNumber, lastNumber];
 };

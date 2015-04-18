@@ -12,14 +12,36 @@ describe('Fibonacci', function () {
     });
 
     it('can add number to the list', function () {
-        fibonacci.include_number_in_array(1);
+        fibonacci.includeNumberInArray(1);
         expect(fibonacci.list).toEqual([0, 1]);
     });
 
     it('knows the final two numbers in the array', function () {
-        fibonacci.include_number_in_array(1);
-        fibonacci.include_number_in_array(2);
-        fibonacci.include_number_in_array(3);
-        expect(fibonacci.last_two_numbers()).toEqual([2, 3]);
+        fibonacci.includeNumberInArray(1);
+        fibonacci.includeNumberInArray(2);
+        fibonacci.includeNumberInArray(3);
+        expect(fibonacci.lastTwoNumbers()).toEqual([2, 3]);
+    });
+
+    it('avoids infinite looping by specifying a number of places to calculate to', function () {
+        fibonacci.includeNumberInArray(1);
+        fibonacci.includeNumberInArray(2);
+        fibonacci.includeNumberInArray(3);
+        fibonacci.includeNumberInArray(4);
+        fibonacci.includeNumberInArray(5);
+        expect(fibonacci.list).toEqual([0, 1, 2, 3, 4]);
+    });
+
+    it('has a default list size of 5', function () {
+        expect(fibonacci.defaultListSize).toEqual(5);
+    });
+
+    xit('can change its list size', function () {
+        expect(listSize).toEqual(6);
+    });
+
+    xit('adds sum of final two numbers to array', function () {
+        fibonacci.includeNumberInArray(1);
+        expect(fibonacci.list).toEqual([0, 1, 1, 2, 3]);
     });
 });
