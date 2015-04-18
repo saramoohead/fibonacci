@@ -13,7 +13,15 @@ Fibonacci.prototype.includeNumberInArray = function (number) {
 
 Fibonacci.prototype.lastTwoNumbers = function () {
     "use strict";
-    var lastNumber = this.list[this.list.length-1];
-    var secondToLastNumber = this.list[this.list.length-2];
-    return [secondToLastNumber, lastNumber];
+    return [this.list[this.list.length-1], this.list[this.list.length-2]];
+};
+
+Fibonacci.prototype.addSum = function () {
+    "use strict";
+    var newNumber = this.list[this.list.length-1] + this.list[this.list.length-2];
+    return newNumber;
+};
+
+Fibonacci.prototype.addSumToArray = function() {
+
 };
