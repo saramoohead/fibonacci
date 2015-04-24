@@ -4,14 +4,18 @@ var describe, Fibonacci, fibonacci, beforeEach, it, expect;
 
 describe('Fibonacci', function () {
     beforeEach(function () {
-        fibonacci = new Fibonacci();
+        fibonacci = new Fibonacci(5);
+    });
+
+    it('takes list size from user', function () {
+        expect(fibonacci.listSize).toEqual(5);
     });
 
     it('has zero as first number in the list', function () {
         expect(fibonacci.list[0]).toBe(0);
     });
 
-    it('can add number to the list', function () {
+    it('can add the next number to the list', function () {
         fibonacci.includeNumberInArray(1);
         expect(fibonacci.list).toEqual([0, 1]);
     });
@@ -23,7 +27,7 @@ describe('Fibonacci', function () {
         expect(fibonacci.lastTwoNumbers()).toEqual([3, 2]);
     });
 
-    it('avoids infinite looping by specifying a number of places to calculate to', function () {
+    it('avoids infinite looping by limiting list size', function () {
         fibonacci.includeNumberInArray(1);
         fibonacci.includeNumberInArray(2);
         fibonacci.includeNumberInArray(3);
@@ -32,28 +36,18 @@ describe('Fibonacci', function () {
         expect(fibonacci.list).toEqual([0, 1, 2, 3, 4]);
     });
 
-    it('has a default list size of 5', function () {
-        expect(fibonacci.defaultListSize).toEqual(5);
-    });
-
-    xit('adds sum of final two numbers', function () {
-        fibonacci.includeNumberInArray(1);
-        expect(fibonacci.addSum()).toEqual(1);
-    });
-
     it('adds sum of final two numbers into list', function () {
         fibonacci.includeNumberInArray(1);
         fibonacci.addSumToArray();
         expect(fibonacci.list).toEqual([0, 1, 1]);
     });
 
-    xit('adds sum of final two numbers to array', function () {
+    it('builds the list in the fibonacci sequece', function () {
         fibonacci.includeNumberInArray(1);
+        fibonacci.addSumToArray();
+        fibonacci.addSumToArray();
+        fibonacci.addSumToArray();
         expect(fibonacci.list).toEqual([0, 1, 1, 2, 3]);
-    });
-
-    xit('can change its list size', function () {
-        expect(fibonacci.listSize).toEqual(6);
     });
 
 });

@@ -1,12 +1,12 @@
-var Fibonacci = function () {
+var Fibonacci = function (listSize) {
     "use strict";
     this.list = [0];
-    this.defaultListSize = 5;
+    this.listSize = listSize;
 };
 
 Fibonacci.prototype.includeNumberInArray = function (number) {
     "use strict";
-    if(this.list.length < this.defaultListSize) {
+    if(this.list.length < this.listSize) {
         this.list.push(number);
     }
 };
@@ -21,3 +21,4 @@ Fibonacci.prototype.addSumToArray = function () {
     var newNumber = (this.list[this.list.length-1] + this.list[this.list.length-2]);
     this.list.push(newNumber);
 };
+
