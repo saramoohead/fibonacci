@@ -4,11 +4,11 @@ var describe, Fibonacci, fibonacci, beforeEach, it, expect;
 
 describe('Fibonacci', function () {
     beforeEach(function () {
-        fibonacci = new Fibonacci(5);
+        fibonacci = new Fibonacci(10);
     });
 
     it('takes list size from user', function () {
-        expect(fibonacci.listSize).toEqual(5);
+        expect(fibonacci.listSize).toEqual(10);
     });
 
     it('has zero as first number in the list', function () {
@@ -35,12 +35,16 @@ describe('Fibonacci', function () {
     });
 
     it('avoids infinite looping by limiting list size', function () {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 10; i++) {
             fibonacci.includeNumberInArray(i+1);
         }
-        expect(fibonacci.list).toEqual([0, 1, 2, 3, 4]);
+        expect(fibonacci.list).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
 
+    it('prints the full list based on list size', function () {
+        fibonacci.print();
+        expect(fibonacci.list).toEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
+    });
 
 
 });

@@ -16,3 +16,18 @@ Fibonacci.prototype.addSumToArray = function () {
     var newNumber = (this.list[this.list.length-1] + this.list[this.list.length-2]);
     this.list.push(newNumber);
 };
+
+Fibonacci.prototype.print = function() {
+    if (this.listSize > 1) {
+        fibonacci.includeNumberInArray(1);
+        for (var i = 0; i < (this.listSize - 2); i++) {
+            this.addSumToArray();
+        }
+        return this.list;
+    } else if (this.listSize = 1) {
+        return this.list;
+    } else {
+        return "I can't calcuate that.";
+    }
+
+};
