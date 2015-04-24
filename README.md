@@ -4,4 +4,4 @@ of TDD a bowling game, as recommended by @stephenlloyd
 * JavaScript
 * Jasmine
 
-<img src="/img/fibonacci.gif">
+<img src="/img/fibonacci2.gif">
