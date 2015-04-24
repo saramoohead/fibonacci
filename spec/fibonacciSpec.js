@@ -20,34 +20,27 @@ describe('Fibonacci', function () {
         expect(fibonacci.list).toEqual([0, 1]);
     });
 
-    it('knows the final two numbers in the array', function () {
-        fibonacci.includeNumberInArray(1);
-        fibonacci.includeNumberInArray(2);
-        fibonacci.includeNumberInArray(3);
-        expect(fibonacci.lastTwoNumbers()).toEqual([3, 2]);
-    });
-
-    it('avoids infinite looping by limiting list size', function () {
-        fibonacci.includeNumberInArray(1);
-        fibonacci.includeNumberInArray(2);
-        fibonacci.includeNumberInArray(3);
-        fibonacci.includeNumberInArray(4);
-        fibonacci.includeNumberInArray(5);
-        expect(fibonacci.list).toEqual([0, 1, 2, 3, 4]);
-    });
-
     it('adds sum of final two numbers into list', function () {
         fibonacci.includeNumberInArray(1);
         fibonacci.addSumToArray();
         expect(fibonacci.list).toEqual([0, 1, 1]);
     });
 
-    it('builds the list in the fibonacci sequece', function () {
+    it('manually builds the list in the fibonacci sequece', function () {
         fibonacci.includeNumberInArray(1);
         fibonacci.addSumToArray();
         fibonacci.addSumToArray();
         fibonacci.addSumToArray();
         expect(fibonacci.list).toEqual([0, 1, 1, 2, 3]);
     });
+
+    it('avoids infinite looping by limiting list size', function () {
+        for (var i = 0; i < 5; i++) {
+            fibonacci.includeNumberInArray(i+1);
+        }
+        expect(fibonacci.list).toEqual([0, 1, 2, 3, 4]);
+    });
+
+
 
 });

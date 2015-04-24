@@ -11,14 +11,8 @@ Fibonacci.prototype.includeNumberInArray = function (number) {
     }
 };
 
-Fibonacci.prototype.lastTwoNumbers = function () {
-    "use strict";
-    return [this.list[this.list.length-1], this.list[this.list.length-2]];
-};
-
 Fibonacci.prototype.addSumToArray = function () {
     "use strict";
     var newNumber = (this.list[this.list.length-1] + this.list[this.list.length-2]);
     this.list.push(newNumber);
 };
-
