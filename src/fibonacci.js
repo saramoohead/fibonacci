@@ -19,7 +19,7 @@ Fibonacci.prototype.addSumToArray = function () {
 
 Fibonacci.prototype.print = function() {
     if (this.listSize > 1) {
-        fibonacci.includeNumberInArray(1);
+        this.includeNumberInArray(1);
         for (var i = 0; i < (this.listSize - 2); i++) {
             this.addSumToArray();
         }
