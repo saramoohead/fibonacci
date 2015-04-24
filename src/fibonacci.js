@@ -16,12 +16,8 @@ Fibonacci.prototype.lastTwoNumbers = function () {
     return [this.list[this.list.length-1], this.list[this.list.length-2]];
 };
 
-Fibonacci.prototype.addSum = function () {
+Fibonacci.prototype.addSumToArray = function () {
     "use strict";
-    var newNumber = this.list[this.list.length-1] + this.list[this.list.length-2];
-    return newNumber;
-};
-
-Fibonacci.prototype.addSumToArray = function() {
-
+    var newNumber = (this.list[this.list.length-1] + this.list[this.list.length-2]);
+    this.list.push(newNumber);
 };

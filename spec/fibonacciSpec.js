@@ -36,17 +36,15 @@ describe('Fibonacci', function () {
         expect(fibonacci.defaultListSize).toEqual(5);
     });
 
-    it('adds sum of final two numbers', function () {
+    xit('adds sum of final two numbers', function () {
         fibonacci.includeNumberInArray(1);
-        expect(fibonacci.list).toEqual([0, 1]);
         expect(fibonacci.addSum()).toEqual(1);
     });
 
-    it('wants Sara to know what she is doing', function () {
+    it('adds sum of final two numbers into list', function () {
         fibonacci.includeNumberInArray(1);
-        expect(fibonacci.list).toEqual([0, 1]);
-        expect(fibonacci.addSum()).toEqual(1);
-        expect(fibonacci.addSumToArray()).toEqual(1);
+        fibonacci.addSumToArray();
+        expect(fibonacci.list).toEqual([0, 1, 1]);
     });
 
     xit('adds sum of final two numbers to array', function () {
